@@ -26,7 +26,8 @@ stages:
         provider: 'azurerm'
         command: 'init'
         workingDirectory: '$(System.DefaultWorkingDirectory)/WebApp-ASP.Net core/terraform-manifests'
-        backendServiceArm: 'Dev Test(2)(18a0e420-4ca6-47f3-ba52-2534b3c7d2c1)'
+        backendAzureRmUseEntraIdForAuthentication: true
+        backendServiceArm: 'Alok Subscription 2(11b69d83-0d2c-46de-9f6d-04236e960d4e)'
         backendAzureRmResourceGroupName: 'terraform_rg01'
         backendAzureRmStorageAccountName: 'terraformstate2015'
         backendAzureRmContainerName: 'tfcontainer01'
@@ -48,20 +49,19 @@ stages:
         customCommand: 'fmt'
         outputTo: 'console'
         environmentServiceNameAzureRM: 'Dev Test(2)(18a0e420-4ca6-47f3-ba52-2534b3c7d2c1)'
-    
     - task: TerraformTaskV4@4
       inputs:
         provider: 'azurerm'
         command: 'plan'
         workingDirectory: '$(System.DefaultWorkingDirectory)/WebApp-ASP.Net core/terraform-manifests'
-        environmentServiceNameAzureRM: 'Dev Test(2)(18a0e420-4ca6-47f3-ba52-2534b3c7d2c1)'
+        environmentServiceNameAzureRM: 'devopsserviceconnection1000'
+    - 
     - task: CopyFiles@2
       displayName: Copy files
       inputs:
         SourceFolder: '$(Build.SourcesDirectory)'
         Contents: '**'
         TargetFolder: '$(build.artifactstagingdirectory)'
-        OverWrite: true
     - task: PublishBuildArtifacts@1
       displayName: Publish Artifacts
       inputs:
