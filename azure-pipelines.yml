@@ -27,7 +27,7 @@ stages:
         command: 'init'
         workingDirectory: '$(System.DefaultWorkingDirectory)/WebApp-ASP.Net core/terraform-manifests'
         backendAzureRmUseEntraIdForAuthentication: true
-        backendServiceArm: 'devopsserviceconnection1000'
+        backendServiceArm: 'Alok Subscription 2(11b69d83-0d2c-46de-9f6d-04236e960d4e)'
         backendAzureRmResourceGroupName: 'terraform_rg01'
         backendAzureRmStorageAccountName: 'terraformstate2015'
         backendAzureRmContainerName: 'tfcontainer01'
