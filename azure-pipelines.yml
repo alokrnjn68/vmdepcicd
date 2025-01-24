@@ -29,7 +29,7 @@ stages:
         command: 'init'
         workingDirectory: '$(System.DefaultWorkingDirectory)/WebApp-ASP.Net core/terraform-manifests'
         backendAzureRmUseEntraIdForAuthentication: true
-        backendServiceArm: 'Alok Subscription 2(11b69d83-0d2c-46de-9f6d-04236e960d4e)'
+        backendServiceArm: 'devopsserviceconnection1000'
         backendAzureRmResourceGroupName: 'terraform_rg01'
         backendAzureRmStorageAccountName: 'terraformstate2015'
         backendAzureRmContainerName: 'tfcontainer01'
@@ -50,7 +50,7 @@ stages:
         workingDirectory: '$(System.DefaultWorkingDirectory)/WebApp-ASP.Net core/terraform-manifests'
         outputTo: 'console'
         customCommand: 'fmt'
-        environmentServiceNameAzureRM: 'Alok Subscription 2(2)(11b69d83-0d2c-46de-9f6d-04236e960d4e)'
+        environmentServiceNameAzureRM: 'devopsserviceconnection1000'
     - task: TerraformTaskV4@4
       inputs:
         provider: 'azurerm'
